@@ -1,0 +1,54 @@
+<section class="card register">
+  <form name="myupdateform"
+    ng-submit="updateuserinfo()"
+    novalidate>
+
+    <div class="textintro">
+      <h1>Update</h1>
+      <p class="error validationerror" ng-show="invalidmessage">{{ invalidmessage }}</p>
+    </div>
+
+      <fieldset>
+      <input type="text" name="name" placeholder="Name"
+      ng-model="suser.name" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myupdateform.name.$invalid && myupdateform.name.$touched">
+       Name required</p>
+
+      
+        <input type="text" name="username" placeholder="username"
+      ng-model="suser.username" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myupdateform.username.$invalid && myupdateform.username.$touched">
+      User name required</p>
+
+      <input type="email" name="email" placeholder="Email" readonly=""
+      ng-model="suser.email" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myupdateform.email.$invalid && myupdateform.email.$touched">
+      Must be a valid email</p>
+
+      <input type="password" name="password" placeholder="Password"
+      ng-model="suser.password" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myupdateform.password.$invalid && myupdateform.email.$touched">
+      Password is required</p>
+      
+ <input type="text" name="location" placeholder="Location"
+      ng-model="suser.location" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myupdateform.location.$invalid && myupdateform.location.$touched">
+      Location is required</p>
+      <input type="text" name="phone" placeholder="Phone"
+      ng-model="suser.contact_no" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myupdateform.phone.$invalid && myupdateform.phone.$touched">
+      Phone is required</p>
+
+    </fieldset>
+
+    <button type="submit" class="btn"
+    ng-disabled="myupdateform.$invalid">Update</button>
+   
+  </form>
+</section>

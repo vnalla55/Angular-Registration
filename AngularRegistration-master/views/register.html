@@ -1,0 +1,55 @@
+<section class="card register">
+  <form name="myform"
+    ng-submit="register()"
+    novalidate>
+
+    <div class="textintro">
+      <h1>Register</h1>
+      <p>To access site features</p>
+      <p class="error validationerror" ng-show="invalidmessage">{{ invalidmessage }}</p>
+    </div>
+
+    <fieldset>
+      <input type="text" name="name" placeholder="Name"
+      ng-model="user.name" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.name.$invalid && myform.name.$touched">
+       Name required</p>
+
+      
+        <input type="text" name="username" placeholder="username"
+      ng-model="user.username" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.username.$invalid && myform.username.$touched">
+      User name required</p>
+
+      <input type="email" name="email" placeholder="Email"
+      ng-model="user.email" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.email.$invalid && myform.email.$touched">
+      Must be a valid email</p>
+
+      <input type="password" name="password" placeholder="Password"
+      ng-model="user.password" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.password.$invalid && myform.email.$touched">
+      Password is required</p>
+      
+ <input type="text" name="location" placeholder="Location"
+      ng-model="user.location" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.location.$invalid && myform.location.$touched">
+      Location is required</p>
+      <input type="text" name="phone" placeholder="Phone"
+      ng-model="user.phone" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.phone.$invalid && myform.phone.$touched">
+      Phone is required</p>
+
+    </fieldset>
+
+    <button type="submit" class="btn"
+    ng-disabled="myform.$invalid">Register</button>
+    <p>or <a ng-href="#/login">login</a></p>
+  </form>
+</section>

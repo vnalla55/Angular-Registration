@@ -1,0 +1,9 @@
+  <div class="branding"><a ng-href="#/">Assignment Five</a></div>
+  <ul>
+    <li><a ng-hide="authenticated" ng-href="#/login">Login</a></li>
+    <li><a ng-hide="authenticated" ng-href="#/register">Register</a></li>
+    <li><a ng-hide="isnotloggedin" ng-controller="RegistrationController" ng-href="#/login" ng-click="logout()">Logout</a></li>
+     <li><a ng-hide="isnotloggedin" ng-href="#/profile">Profile</a></li>
+      <li><a ng-hide="isnotloggedin" ng-href="#/message">Messages</a></li>
+    
+  </ul>

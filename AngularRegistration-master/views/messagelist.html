@@ -1,0 +1,34 @@
+<table class="table table-bordered table-striped" id="messagetable">
+        <thead>
+            <tr>
+                <th>Message Title</th>
+                <th>Message body</th>
+                <th>Sender</th>
+                <th>Importance</th>
+                <th></th>
+            </tr>  
+        </thead>
+        <tbody >
+           
+        
+            <tr ng-repeat="message in messages">
+               
+              <td>{{message.message_title}}</td>
+              <td>{{message.message_body}}</td>
+              <td>{{message.Sender}}</td>
+              <td ng-init="message.important==1?flagmarkhider=1:flagmarkhider=0;message.important==0?flagunmarkhider=1:flagunmarkhider=0">{{message.important == 1 ? "important" : "Unimportant"}}</td>
+           
+              <td ng-init="messageid=message.id;message.important==1?flipflag=0:flipflag=1;"><a ng-href="#" ng-click="markImportantOrUnimportant(messageid,flipflag)" ng-controller="SuccessController">
+                      <i  ng-hide="(flagmarkhider)" class="fa fa-check" aria-hidden="true"> Mark Imp</i>
+                      <i  ng-hide="(flagunmarkhider)" class="fa fa-times" aria-hidden="true"> Mark UnImp</i>
+                    
+                  </a>
+                  <a ng-href="#" ng-click="deleteMessage(messageid)" ng-controller="SuccessController"><i class="fa fa-trash-o"> Delete</i> </a>
+                  <a ng-href="#/message/{{messageid}}"  ng-controller="SuccessController"><i class="fa fa-eye"> View</i> </a>
+                  
+              </td>
+            </tr>
+            
+            </tbody>
+     </table>
+      
